@@ -1,0 +1,22 @@
+class KthLargest {
+    /**
+     * @param {number} k
+     * @param {number[]} nums
+     */
+    constructor(k, nums) {
+        this.k = k; 
+        this.nums = nums;
+    }
+
+    /**
+     * @param {number} val
+     * @return {number}
+     */
+    add(val) {
+        this.nums.push(val);
+
+        const sorted = this.nums.sort((a,b)=>b-a)
+
+        return sorted[this.k-1]
+    }
+}
